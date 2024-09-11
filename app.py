@@ -19,4 +19,4 @@ user_slider_age = st.slider('Selectionner un age : ', min_value=18, max_value=99
 
 # Envoi sur la sortie streamlit. 
 if st.checkbox('afficher le jeu de données'):
-  st.write(df[(df.Profession == user_selectbox_pro)(df.Age == user_slider_age)])
+  st.write(df[(df.Profession == user_selectbox_pro)&(df.Age == user_slider_age)])
