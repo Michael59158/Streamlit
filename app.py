@@ -30,7 +30,7 @@ if uploaded_file is not None:
 # Envoi sur la sortie streamlit. 
   if st.checkbox('afficher le jeu de données'):
 #    st.write(df[user_selectbox_cols])
-    st.write(df.[user_selectbox_cols][(df.Profession == user_selectbox_pro)&(df.Age == user_slider_age)])
+    st.write(df[user_selectbox_cols][(df.Profession == user_selectbox_pro)&(df.Age == user_slider_age)])
 
   chart_data = pd.df.[user_selectbox_cols]
 
