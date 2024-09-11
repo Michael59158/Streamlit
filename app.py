@@ -1,3 +1,6 @@
+# https://docs.streamlit.io/
+# APi reference pour avoir toute la documentation sur les fonctionnalités. 
+
 import streamlit as st
 import pandas as pd
 
