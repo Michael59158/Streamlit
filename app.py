@@ -27,6 +27,6 @@ if uploaded_file is not None:
 
 
 #liste déroulante sur la colonne Profession 
-  cols = df.columns()
+  cols = df.columns
   user_selectbox_pro = st.selectbox('Selectionnez une colonnes :',cols)
 
