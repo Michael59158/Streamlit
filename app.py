@@ -12,4 +12,4 @@ if st.checkbox('afficher le jeu de données'):
   st.write(df)
 
 #liste déroulante
-st.selectbox('Selectionnez une profession :',[1,2,3,4]
+st.selectbox('Selectionnez une profession :',[1,2,3,4])
