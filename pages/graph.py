@@ -1,7 +1,7 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 
-uploaded_file = st.file_uploader("Choose a file",file='csv')
+uploaded_file = st.file_uploader("Choose a file",type='csv')
 if uploaded_file is not None:
     # To read file as bytes:
     dataframe = pd.read_csv(uploaded_file)
