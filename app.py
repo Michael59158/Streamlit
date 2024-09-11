@@ -1,13 +1,15 @@
 # https://docs.streamlit.io/
 # APi reference pour avoir toute la documentation sur les fonctionnalités. 
-
 import streamlit as st
 import pandas as pd
 
 st.title('My Dashboard MWI')
 
+
 # lecture du fichier et affectation dans un dataframe
-df = pd.read_csv('data.csv')
+uploaded_file = st.file_uploader("Choose a file",type='csv')
+if uploaded_file id not None:
+  df = pd.read_csv('uploaded_file')
 
 pro = df.Profession.unique()
 
@@ -23,3 +25,6 @@ user_slider_age = st.slider('Selectionner un age : ', min_value=18, max_value=99
 # Envoi sur la sortie streamlit. 
 if st.checkbox('afficher le jeu de données'):
   st.write(df[(df.Profession == user_selectbox_pro)&(df.Age == user_slider_age)])
+
+
+
