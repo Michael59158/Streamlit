@@ -3,6 +3,10 @@ import pandas as pd
 
 st.title('My Dashboard MWI')
 
+# lecture du fichier et affectation dans un dataframe
 df = pd.read_csv('data.csv')
 
-st.write(df)
+# Envoi sur la sortie streamlit. 
+
+if st.checkbox('afficher le jeu de données'):
+  st.write(df)
