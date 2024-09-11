@@ -20,13 +20,14 @@ if uploaded_file is not None:
 # barre de sélection de min à max, avec position par défaut sur value et déplacement d'un pas de 1
   user_slider_age = st.slider('Selectionner un age : ', min_value=18, max_value=99,value=30,step=1)
 
+  #liste déroulante sur la colonne Profession 
+  cols = df.columns
+  user_selectbox_cols = st.selectbox('Selectionnez une colonnes :',cols)
 
 # Envoi sur la sortie streamlit. 
   if st.checkbox('afficher le jeu de données'):
-    st.write(df[(df.Profession == user_selectbox_pro)&(df.Age == user_slider_age)])
+    st.write(df.(user_selectbox_cols).[(df.Profession == user_selectbox_pro)&(df.Age == user_slider_age)])
 
 
-#liste déroulante sur la colonne Profession 
-  cols = df.columns
-  user_selectbox_pro = st.selectbox('Selectionnez une colonnes :',cols)
+
 
