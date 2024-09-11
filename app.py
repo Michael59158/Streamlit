@@ -26,4 +26,7 @@ if uploaded_file is not None:
     st.write(df[(df.Profession == user_selectbox_pro)&(df.Age == user_slider_age)])
 
 
+#liste déroulante sur la colonne Profession 
+  cols = df.columns()
+  user_selectbox_pro = st.selectbox('Selectionnez une colonnes :',cols)
 
