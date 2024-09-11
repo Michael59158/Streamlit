@@ -1,5 +1,5 @@
 import streamlit as st
-import matpotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 uploaded_file = st.file_uploader("Choose a file",file='csv')
 if uploaded_file is not None:
