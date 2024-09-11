@@ -1,5 +1,5 @@
 import streamlit as st
-import matpotlib as plt
+import matpotlib.pyplot as plt
 
 uploaded_file = st.file_uploader("Choose a file",file='csv')
 if uploaded_file is not None:
@@ -15,6 +15,6 @@ if uploaded_file is not None:
     # graphique
     cols_selected_value = dataframe[user_select_cols]
     fig, ax = plt.subplots()
-    ax.hist(arr, bins=20)
+    ax.hist(cols_selected_value, bins=20)
 
     st.pyplot(fig)
