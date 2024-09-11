@@ -15,4 +15,7 @@ pro = df.Profession.unique()
 
 #liste déroulante
 #st.selectbox('Selectionnez une profession :',[1,2,3,4])
-st.selectbox('Selectionnez une profession :',pro)
+#liste déroulante sur la colonne Profession 
+user_selectbox_pro = st.selectbox('Selectionnez une profession :',pro)
+
+st.write(df[df.Profession == user_selectbox_pro])
