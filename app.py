@@ -32,8 +32,6 @@ if uploaded_file is not None:
 #    st.write(df[user_selectbox_cols])
     st.write(df[user_selectbox_cols][(df.Profession == user_selectbox_pro)&(df.Age == user_slider_age)])
 
-  chart_data = pd.df[user_selectbox_cols]
-
-  st.bar_chart(chart_data)
+    st.bar_chart(df[user_selectbox_cols])
 
 
