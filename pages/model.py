@@ -2,7 +2,6 @@ import streamlit as st
 
 
 
-
 with st.form("my_form"):
   st.write("My Form")
   name = st.text_input("Your name ?")
@@ -19,8 +18,10 @@ with st.form("my_form"):
   user_slider_median_income = st.slider('median_income : ', min_value=2000, max_value=800000,value=50000,step=1000)
 
 
+  data = {user_slider_longitude, user_slider_latitude, user_slider_housing_median_age, user_slider_total_rooms, user_slider_total_bedrooms, user_slider_population, user_slider_households, user_slider_median_income}
+  
  
   #every 
   submitted = st.form_submit_button("Submit")
   if submitted:
-        st.write(f'Hi {name}')
+        st.write(f'Hi {data}')
