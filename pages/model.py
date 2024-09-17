@@ -32,5 +32,5 @@ with st.form("my_form"):
   submitted = st.form_submit_button("Submit Prediction")
   if submitted:
       reponse = requests.post("https://2248-35-224-225-153.ngrok-free.app/predict",json=data)
-      st.write(f'resultat {reponse.json(['Prediction'])}')
+      st.write(f'resultat {reponse.json()['Prediction']}')
 
