@@ -6,7 +6,7 @@ user_slider_latitude = st.slider('longitude : ', min_value=-180, max_value=180,v
 
 
 with st.form("my_form"):
-  st.write("My Form')
+  st.write("My Form")
   name = st.text.input("Your name ?")
 
   #every 
