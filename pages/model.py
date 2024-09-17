@@ -9,7 +9,6 @@ with st.form("my_form"):
   # barre de sélection de min à max, avec position par défaut sur value et déplacement d'un pas de 1
   user_slider_longitude = st.slider('longitude : ', min_value=-180, max_value=180,value=0,step=1)
   user_slider_latitude = st.slider('latitude : ', min_value=-180, max_value=180,value=0,step=1)
-
   user_slider_housing_median_age = st.slider('Median_Age : ', min_value=20, max_value=300,value=50,step=10)
   user_slider_total_rooms = st.slider('total rooms : ', min_value=50, max_value=500,value=50,step=10)
   user_slider_total_bedrooms = st.slider('total_bedrooms : ', min_value=80, max_value=180,value=100,step=5)
@@ -30,6 +29,7 @@ with st.form("my_form"):
   submitted = st.form_submit_button("Submit Prediction")
   if submitted:
       reponse = requests.post("https://2248-35-224-225-153.ngrok-free.app/predict",json=data)
+      predit = reponse.json()['Prediction']
       st.write(f'features {data}')
-      st.write(f'resultat {reponse.json()['Prediction']}')
+      st.write(f'resultat {predit}')
 
