@@ -22,7 +22,7 @@ with st.form("my_form"):
   #every 
   submitted = st.form_submit_button("Submit Prediction")
   if submitted:
-        data = {"longitude":user_slider_longitude,
+      data = {"longitude":user_slider_longitude,
           "latitude": user_slider_latitude, 
           "housing_median_age":user_slider_housing_median_age, 
           "total_rooms":user_slider_total_rooms, 
@@ -30,6 +30,6 @@ with st.form("my_form"):
           "population":user_slider_population, 
           "households":user_slider_households, 
           "median_income":user_slider_median_income}
-        reponse = requests.post("https://2248-35-224-225-153.ngrok-free.app/predict",json=data)
+      reponse = requests.post("https://2248-35-224-225-153.ngrok-free.app/predict",json=data)
       st.write(f'resultat {reponse.json()['Prediction']}')
 
