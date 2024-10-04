@@ -6,7 +6,7 @@ st.title('historique de conversation')
 
 with st.form('exec'):
     base_url = st.text_input('Insert API URL')
-    submit = st.form_submit_button('Submit)
+    submit = st.form_submit_button('Submit')
     
 if submit:    
     url = f"{base_url}select_data"
