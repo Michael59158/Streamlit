@@ -3,7 +3,7 @@ import requests
 import pandas as pd 
 
 st.title('historique de conversation')
-
+st.form_submit_button()
 with st.form('Submit'):
     base_url = st.text_input('Insert API URL')
     url = f"{base_url}select_data"
