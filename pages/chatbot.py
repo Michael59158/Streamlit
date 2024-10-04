@@ -39,7 +39,7 @@ if prompt := st.chat_input("What is up?"):
     select_url = f"{base_url}select_data"
     response_api_select = requests.post(select_url,params=data)
     df = pd.DataFrame(response_api_select.text)
-    st.write(f'{df}')
+    st.dataframe(df)
     #if response_api_select.status_code == 200:
     #   st.write(f'{response_api_select.text}')
     #else:
