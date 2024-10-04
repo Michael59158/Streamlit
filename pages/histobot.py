@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd 
 
-st.title.write('historique de conversation')
+st.title('historique de conversation')
 
 url = f"{base_url}select_data"
 select_url = f"{base_url}select_data"
