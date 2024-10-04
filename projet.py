@@ -1,8 +1,8 @@
 import streamlit as st
 
 if st.button("Home"):
-    st.switch_page("your_app.py")
-if st.button("Page 1"):
-    st.switch_page("pages/page_1.py")
-if st.button("Page 2"):
-    st.switch_page("pages/page_2.py")
+    st.switch_page("projet.py")
+if st.button("Conversation avec l'assistant"):
+    st.switch_page("chatbot.py")
+if st.button("Historique de conversation"):
+    st.switch_page("histobot.py")
