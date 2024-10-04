@@ -18,7 +18,7 @@ if prompt := st.chat_input("What is up?"):
 
     url = "https://1cdb-34-31-223-192.ngrok-free.app/insert_data"
     data = {"message": prompt}
-    response = f'Echo : "response", data'
+    print(data)
     response_api = requests.post(url,json=data)
 
     if response_api.status_code == 200:
