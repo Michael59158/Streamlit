@@ -6,6 +6,11 @@ st.title("FAQ Streamlit Michael")
 
 base_url = st.sidebar.text_input("Insert API URL")
 
+option = st.selectbox(
+    "Choississez vote modele ?",
+    ("gpt-4", "gpt-3", "davinci"),
+)
+
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
