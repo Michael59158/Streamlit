@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import pandas as pd 
 
 st.title("FAQ Streamlit Michael")
 
@@ -37,8 +38,10 @@ if prompt := st.chat_input("What is up?"):
 
     select_url = f"{base_url}select_data"
     response_api_select = requests.post(select_url,params=data)
-    if response_api_select.status_code == 200:
-       st.write(f'{response_api_select.text}')
-    else:
-       st.write(f'Echo : "Error calling API Select:", {response_api_select.status_code}')
+    df = Dataframe(response_api_select)
+    st.write(f'{df}')
+    #if response_api_select.status_code == 200:
+    #   st.write(f'{response_api_select.text}')
+    #else:
+    #   st.write(f'Echo : "Error calling API Select:", {response_api_select.status_code}')
 
