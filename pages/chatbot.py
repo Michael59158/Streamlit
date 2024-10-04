@@ -24,7 +24,7 @@ if prompt := st.chat_input("What is up?"):
 
     # Using "with" notation
     url = f"{base_url}insert_data"
-    data = {"message": prompt}
+    data = {"message": prompt ,"option": option }
 
     response_api = requests.post(url,params=data)
 
