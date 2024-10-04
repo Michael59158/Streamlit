@@ -19,8 +19,7 @@ if left.button("Historique de conversation", use_container_width=True):
     response_api_select = requests.post(select_url,params=data)
     df = pd.DataFrame(response_api_select.json())
     st.data_editor(df)
-
-    left.markdown(f'{st.data_editor(df)})
+ 
 
 if right.button("Material button", icon=":material/mood:", use_container_width=True):
     right.markdown("You clicked the Material button.")
