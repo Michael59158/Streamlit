@@ -10,14 +10,17 @@ option = st.sidebar.selectbox(
     "Choississez vote modele ?",
     ("gpt-4", "gpt-3", "davinci"),
 )
-   
+
+if "messages' not in st.session_state:
+    st.session_state.messages = []
+
 if prompt := st.chat_input("What is up?"):
     # Display user message in chat message container
     with st.chat_message("user"):
          st.markdown(prompt)
+  
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
-
 
     # Using "with" notation
     url = f"{base_url}insert_data"
