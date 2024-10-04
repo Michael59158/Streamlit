@@ -8,7 +8,7 @@ base_url = st.sidebar.text_input("Insert API URL")
 
 option = st.sidebar.selectbox(
     "Choississez vote modele ?",
-    ("gpt-4", "gpt-3", "davinci"),
+    ("gpt-4", "gpt-3.5-turbo"),
 )
 
 if "messages" not in st.session_state:
