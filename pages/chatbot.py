@@ -36,7 +36,7 @@ if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "assistant", "content": response})
 
     select_url = f"{base_url}select_data"
-    response_api_select = requests.post(url,params=data)
+    response_api_select = requests.post(select_url,params=data)
     if response_api_select.status_code == 200:
        response = f"{response_api_select.text}"
     else:
