@@ -13,24 +13,15 @@ option = st.sidebar.selectbox(
 
 left, right = st.columns(2)
 if left.button("Historique de conversation", use_container_width=True):
-    url = f"{base_url}insert_data"
-    data = {"message": prompt}
+    url = f"{base_url}select_data"
     select_url = f"{base_url}select_data"
-    response_api_select = requests.post(select_url,params=data)
+    response_api_select = requests.get(select_url)
     df = pd.DataFrame(response_api_select.json())
     st.data_editor(df)
  
 
-if right.button("Material button", icon=":material/mood:", use_container_width=True):
+if right.button("Conversation", icon=":material/mood:", use_container_width=True):
     right.markdown("You clicked the Material button.")
-
-
-st.button("Conversation", type="primary")
-if st.button("Say hello"):
-    st.write("Why hello there")
-else:
-    st.write("Goodbye")
-
 
 
 # Initialize chat history
