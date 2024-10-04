@@ -4,6 +4,8 @@ import pandas as pd
 
 st.title('historique de conversation')
 
+base_url = st.text_input("Insert API URL")
+
 url = f"{base_url}select_data"
 select_url = f"{base_url}select_data"
 response_api_select = requests.get(select_url)
