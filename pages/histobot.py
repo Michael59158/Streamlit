@@ -4,9 +4,6 @@ import pandas as pd
 
 st.title('historique de conversation')
 
-col1,col2 = st.columns([1,2])
-col1.title('Sum:')
-
 with st.form('exec'):
     base_url = st.text_input('Insert API URL')
     submit = st.form_submit_button('Submit)
