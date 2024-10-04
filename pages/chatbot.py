@@ -6,10 +6,22 @@ st.title("FAQ Streamlit Michael")
 
 base_url = st.sidebar.text_input("Insert API URL")
 
-option = st.selectbox(
+option = st.sidebar.selectbox(
     "Choississez vote modele ?",
     ("gpt-4", "gpt-3", "davinci"),
 )
+
+st.button("Reset", type="primary")
+if st.button("Say hello"):
+    st.write("Why hello there")
+else:
+    st.write("Goodbye")
+
+select_url = f"{base_url}select_data"
+response_api_select = requests.post(select_url,params=data)
+df = pd.DataFrame(response_api_select.json())
+st.data_editor(df)
+
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -41,12 +53,5 @@ if prompt := st.chat_input("What is up?"):
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
 
-    select_url = f"{base_url}select_data"
-    response_api_select = requests.post(select_url,params=data)
-    df = pd.DataFrame(response_api_select.json())
-    st.data_editor(df)
-    #if response_api_select.status_code == 200:
-    #   st.write(f'{response_api_select.txt}')
-    #else:
-    #   st.write(f'Echo : "Error calling API Select:", {response_api_select.status_code}')
+
 
