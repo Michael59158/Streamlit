@@ -1,3 +1,8 @@
+import streamlit as st
+import requests
+import pandas as pd 
+
+
 if st.button("Home"):
     st.switch_page("pages/homepage.py")
 if st.button("Conversation avec l'assistant"):
