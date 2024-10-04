@@ -47,7 +47,7 @@ if right.button("Conversation", icon=":material/mood:", use_container_width=True
          with st.chat_message("assistant"):
               st.markdown(response)
          # Add assistant response to chat history
-         st.session_state.messages.append({"role": "assistant", "content": response})
+              st.session_state.messages.append({"role": "assistant", "content": response})
 
 
 
