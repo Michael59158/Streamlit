@@ -14,8 +14,8 @@ if prompt := st.chat_input("What is up?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-     
-
+    base_url = st.sidebar.text_input("Insert API URL", type="text")
+    # Using "with" notation
     url = "https://378d-34-31-223-192.ngrok-free.app/insert_data"
     data = {"message": prompt}
  
