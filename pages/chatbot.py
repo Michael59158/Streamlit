@@ -21,12 +21,12 @@ if prompt := st.chat_input("What is up?"):
     with st.echo():
         st.write('data',data)
  
-    response_api = requests.post(url,json=data)
+    response_api = requests.post(url,params=data)
 
     if response_api.status_code == 200:
        response = f"Echo: {response_api.text}"
     else:
-      response = f'Echo : "Error calling API:", response_api.status_code'
+      response = f'Echo : "Error calling API:", {response_api.status_code}'
 
     
     # Display assistant response in chat message container
