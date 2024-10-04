@@ -14,11 +14,10 @@ if prompt := st.chat_input("What is up?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    message = prompt
-    
+     
 
-    url = "https://8a8d-34-148-30-210.ngrok-free.app/insert_data"
-    response_api = requests.post(url)
+    url = "https://18ae-34-31-223-192.ngrok-free.app/insert_data"
+    response_api = requests.post(url,json=prompt)
 
     if response_api.status_code == 200:
        response = f"Echo: {response_api.text}"
