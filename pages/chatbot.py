@@ -10,19 +10,7 @@ option = st.sidebar.selectbox(
     "Choississez vote modele ?",
     ("gpt-4", "gpt-3", "davinci"),
 )
-
-left, right = st.columns(2)
-if left.button("Historique de conversation", use_container_width=True):
-    url = f"{base_url}select_data"
-    select_url = f"{base_url}select_data"
-    response_api_select = requests.get(select_url)
-    df = pd.DataFrame(response_api_select.json())
-    st.data_editor(df)
- 
-
-if right.button("Conversation", icon=":material/mood:", use_container_width=True):
-   st.write('hello')
-    
+   
 if prompt := st.chat_input("What is up?"):
     # Display user message in chat message container
     with st.chat_message("user"):
