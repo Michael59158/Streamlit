@@ -11,16 +11,27 @@ option = st.sidebar.selectbox(
     ("gpt-4", "gpt-3", "davinci"),
 )
 
-st.button("Reset", type="primary")
+left, right = st.columns(2)
+if left.button("Historique de conversation", use_container_width=True):
+    url = f"{base_url}insert_data"
+    data = {"message": prompt}
+    select_url = f"{base_url}select_data"
+    response_api_select = requests.post(select_url,params=data)
+    df = pd.DataFrame(response_api_select.json())
+    st.data_editor(df)
+
+    left.markdown(f'{st.data_editor(df)})
+
+if right.button("Material button", icon=":material/mood:", use_container_width=True):
+    right.markdown("You clicked the Material button.")
+
+
+st.button("Conversation", type="primary")
 if st.button("Say hello"):
     st.write("Why hello there")
 else:
     st.write("Goodbye")
 
-select_url = f"{base_url}select_data"
-response_api_select = requests.post(select_url,params=data)
-df = pd.DataFrame(response_api_select.json())
-st.data_editor(df)
 
 
 # Initialize chat history
