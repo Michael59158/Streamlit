@@ -24,7 +24,7 @@ if prompt := st.chat_input("What is up?"):
     response_api = requests.post(url,params=data)
 
     if response_api.status_code == 200:
-       response = f"Echo: {response_api.text}"
+       response = f"{response_api.text}"
     else:
       response = f'Echo : "Error calling API:", {response_api.status_code}'
 
