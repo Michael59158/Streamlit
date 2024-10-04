@@ -3,6 +3,8 @@ import requests
 
 st.title("FAQ Streamlit Michael")
 
+base_url = st.sidebar.text_input("Insert API URL")
+
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -14,9 +16,9 @@ if prompt := st.chat_input("What is up?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    base_url = st.sidebar.text_input("Insert API URL")
+    
     # Using "with" notation
-    url = "https://378d-34-31-223-192.ngrok-free.app/insert_data"
+    url = f"{base_url}insert_data"
     data = {"message": prompt}
  
     response_api = requests.post(url,params=data)
