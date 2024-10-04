@@ -21,38 +21,35 @@ if left.button("Historique de conversation", use_container_width=True):
  
 
 if right.button("Conversation", icon=":material/mood:", use_container_width=True):
-    right.markdown("You clicked the Material button.")
-
-
 # Initialize chat history
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
-if prompt := st.chat_input("What is up?"):
-    # Display user message in chat message container
-    with st.chat_message("user"):
-         st.markdown(prompt)
-    # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": prompt})
-
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
     
-    # Using "with" notation
-    url = f"{base_url}insert_data"
-    data = {"message": prompt}
- 
-    response_api = requests.post(url,params=data)
-
-    if response_api.status_code == 200:
-       response = f"{response_api.text}"
-    else:
-      response = f'Echo : "Error calling API:", {response_api.status_code}'
-
+    if prompt := st.chat_input("What is up?"):
+        # Display user message in chat message container
+        with st.chat_message("user"):
+             st.markdown(prompt)
+        # Add user message to chat history
+        st.session_state.messages.append({"role": "user", "content": prompt})
     
-    # Display assistant response in chat message container
-    with st.chat_message("assistant"):
-        st.markdown(response)
-    # Add assistant response to chat history
-    st.session_state.messages.append({"role": "assistant", "content": response})
+        
+        # Using "with" notation
+        url = f"{base_url}insert_data"
+        data = {"message": prompt}
+     
+        response_api = requests.post(url,params=data)
+    
+        if response_api.status_code == 200:
+           response = f"{response_api.text}"
+        else:
+          response = f'Echo : "Error calling API:", {response_api.status_code}'
+    
+        
+        # Display assistant response in chat message container
+        with st.chat_message("assistant"):
+            st.markdown(response)
+        # Add assistant response to chat history
+        st.session_state.messages.append({"role": "assistant", "content": response})
 
 
 
